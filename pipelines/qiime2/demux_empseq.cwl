@@ -33,7 +33,7 @@ steps:
           inputBinding:
             prefix: --type
           type: string
-          default: "EMPSingleEndSequences"
+          default: "EMPPairedEndSequences"
         input_path:
           inputBinding:
             prefix: --input-path
@@ -57,7 +57,7 @@ steps:
     label: Demultiplex the sequence
     run:
       class: CommandLineTool
-      baseCommand: ["qiime", "demux", "emp-single"]
+      baseCommand: ["qiime", "demux", "emp-paired"]
       inputs:
         input_seqs:
           inputBinding:
